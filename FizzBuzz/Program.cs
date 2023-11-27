@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz;
+﻿using FizzBuzz.Extensions;
+
+namespace FizzBuzz;
 public class Program
 {
     private const int _defaultCount = 100;
@@ -11,7 +13,7 @@ public class Program
 
         foreach(int value in Enumerable.Range(1, count))
         {
-            Console.WriteLine(value.ToString());
+            Console.WriteLine(value.ToFizzBuzzValue());
         }
     }
 }
