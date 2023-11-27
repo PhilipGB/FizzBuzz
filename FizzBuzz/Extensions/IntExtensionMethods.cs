@@ -1,23 +1,24 @@
 namespace FizzBuzz.Extensions;
+
 public static class IntExtensionMethods
 {
+    private const string Fizz = nameof(Fizz);
+    private const string Buzz = nameof(Buzz);
+
     public static string ToFizzBuzzValue(this int value)
     {
-        if (value % 15 == 0)
-        {
-            return "FizzBuzz";
-        }
+        string? result = null;
 
         if (value % 3 == 0)
         {
-            return "Fizz";
+            result = Fizz;
         }
 
         if (value % 5 ==0)
         {
-            return "Buzz";
+            result += Buzz;
         }
 
-        return value.ToString();
+        return result ?? value.ToString();
     }
 }
