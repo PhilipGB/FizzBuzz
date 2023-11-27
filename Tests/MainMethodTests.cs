@@ -42,6 +42,7 @@ public class MainMethodTests
         Program.Main(new string[] { count });
         var outputArray = output
             .ToString()
+            .TrimEnd('\n') // End of Console output is '\n'
             .Split("\n");
 
         var actual  = outputArray.Length;
