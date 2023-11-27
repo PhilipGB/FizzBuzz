@@ -26,4 +26,27 @@ public class MainMethodTests
         //Assert
         Assert.That(actual, Is.EqualTo(expected));
     }
+
+    [TestCase("1")]
+    [TestCase("11")]
+    [TestCase("101")]
+    public void TestMainWithArgs(string count)
+    {
+        //Arrange
+        StringWriter output = new ();
+        Console.SetOut(output);
+
+        var expected = int.Parse(count);
+
+        //Act
+        Program.Main(new string[] { count });
+        var outputArray = output
+            .ToString()
+            .Split("\n");
+
+        var actual  = outputArray.Length;
+
+        //Assert
+        Assert.That(actual, Is.EqualTo(expected));
+    }    
 }
