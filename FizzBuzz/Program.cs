@@ -1,7 +1,7 @@
 ﻿namespace FizzBuzz;
 public class Program
 {
-    private const int _defaultCount = 101;
+    private const int _defaultCount = 100;
     public static void Main(string[] args)
     {
         if (args.Length == 0 || !int.TryParse(args[0], out int count))
