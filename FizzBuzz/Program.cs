@@ -1,8 +1,17 @@
-﻿namespace hp;
-class Program
+﻿namespace FizzBuzz;
+public class Program
 {
-    static void Main(string[] args)
+    private const int _defaultCount = 101;
+    public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        if (args.Length == 0 || !int.TryParse(args[0], out int count))
+        {
+            count = _defaultCount;
+        }
+
+        foreach(int value in Enumerable.Range(1, count))
+        {
+            Console.WriteLine(value.ToString());
+        }
     }
 }
