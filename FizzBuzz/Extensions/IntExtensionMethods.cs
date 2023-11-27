@@ -8,6 +8,11 @@ public static class IntExtensionMethods
             return "Fizz";
         }
 
+        if (value % 5 ==0)
+        {
+            return "Buzz";
+        }
+
         return value.ToString();
     }
 }
